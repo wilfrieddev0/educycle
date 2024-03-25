@@ -1,0 +1,15 @@
+# The name of the app. Must be unique within a project.
+name: app
+
+# The type of the application to build
+type: 'nodejs:16'
+
+# The size of the persistent disk of the application (in MB)
+disk: 512
+
+# Your app's configuration when it's exposed to the web.
+web:
+    commands:
+        start: NODE_ENV=production npm run start
+hooks:
+    build: npm run build< 
