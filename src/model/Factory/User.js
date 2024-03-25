@@ -1,5 +1,4 @@
 import { config } from "../../../config.js";
-const DOMAINBACK  = config.DOMAINBACK;
 class User {
   // On implemente le singleton pattern
   constructor() {
@@ -24,7 +23,7 @@ class User {
   }
   async login(data){
     try {
-      const req  =  await fetch(`${DOMAINBACK}/login`,{
+      const req  =  await fetch(`${config.DOMAINBACK}/login`,{
         method :'POST',
         body : JSON.stringify(data),
       })
@@ -45,7 +44,7 @@ class User {
   }
   async signup(data){
     try{
-      let result  = await fetch(`${DOMAINBACK}/signup`,{
+      let result  = await fetch(`${config.DOMAINBACK}/signup`,{
         method :'POST',
         body : JSON.stringify(data)
       })
@@ -68,7 +67,7 @@ class User {
   }
   async getUser(id){
     try{
-      const promsie =   await fetch(`${DOMAINBACK}/user/${id}`,{
+      const promsie =   await fetch(`${config.DOMAINBACK}/user/${id}`,{
       })
       if (!promsie.ok){
         this.data = {statut :  3, message : "Requete échouée"}
@@ -82,7 +81,7 @@ class User {
   }
  async uploadProfile(formData,ressource="media"){
     try{
-      const promise = await fetch(`${DOMAINBACK}/${ressource}`, {
+      const promise = await fetch(`${config.DOMAINBACK}/${ressource}`, {
         method :'POST',
         body :  formData
       })
@@ -98,7 +97,7 @@ class User {
 }
 async fetch (ressource, method, param="", body={}){
   try{
-      const promise = method ==='GET' ? await fetch(`${DOMAINBACK}/${ressource}/${param}`) : await fetch(`${DOMAINBACK}/${ressource}/${param }`,{
+      const promise = method ==='GET' ? await fetch(`${config.DOMAINBACK}/${ressource}/${param}`) : await fetch(`${config.DOMAINBACK}/${ressource}/${param }`,{
           method : `${method}`,
           body :  body
       })

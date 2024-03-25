@@ -12,7 +12,6 @@ import Don from "../controller/Don.js";
 import Item from "../controller/Item.js";
 import { config } from "../../config.js";
 // On définit la fonction de routage et on crée l'unique instance de l'utilisateur...
-const DOMAINFRONT = config.DOMAINFRONT;
 export class CustomRouter {
     constructor(){
         CustomRouter.user =  User.getUniqueInstance();
@@ -59,7 +58,7 @@ export class CustomRouter {
     }
     handleLink(event){
         if (event.target.matches('a[href]')) {
-            if (event.target.origin !== DOMAINFRONT){
+            if (event.target.origin !== config.DOMAINFRONT){
                 const url =  new URL(event.target.getAttribute('href'))
                 window.open(url,'_self')
             }else{

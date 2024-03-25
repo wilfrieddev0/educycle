@@ -1,5 +1,4 @@
 import { config } from "../../../config.js";
-const DOMAINBACK  = config.DOMAINBACK;
 class ItemManager {
     constructor(){
         this.AllDatas =  []
@@ -9,8 +8,7 @@ class ItemManager {
     // Cette methode recupère toutes les annonces de la base de données
      async fetch (ressource, method, param="", body=null){
         try{
-            debugger
-            const promise = method ==='GET' ? await fetch(`${DOMAINBACK}/${ressource}/${param}`) : await fetch(`${DOMAINBACK}/${ressource}/${param }`,{
+            const promise = method ==='GET' ? await fetch(`${config.DOMAINBACK}/${ressource}/${param}`) : await fetch(`${config.DOMAINBACK}/${ressource}/${param }`,{
                 method : `${method}`,
                 body :  body
             })
@@ -28,7 +26,7 @@ class ItemManager {
      }
     async fetchDatas(){
         try{
-            const promise = await fetch(`${DOMAINBACK}/item`)
+            const promise = await fetch(`${config.DOMAINBACK}/item`)
             if (!promise.ok){
                 throw new TypeError("Requête échoué")
             }
@@ -36,14 +34,14 @@ class ItemManager {
         }catch(e){
             throw new TypeError(e)
         }finally{
-            this.datas.forEach(item => { item.medias.forEach(file => file.location =`${DOMAINBACK}/${file.location}`)});
+            this.datas.forEach(item => { item.medias.forEach(file => file.location =`${config.DOMAINBACK}/${file.location}`)});
             return this.datas
         }
     }
     // getAll Recupere les annonces d'un utilisateur bien prècis
     async getAll(id){
         try{
-            const promise = await fetch(`${DOMAINBACK}/items/${id}`,{
+            const promise = await fetch(`${config.DOMAINBACK}/items/${id}`,{
             })
             if (!promise.ok){
                 throw new TypeError("Requête échoué")
@@ -54,7 +52,7 @@ class ItemManager {
             throw new TypeError(e)
         }finally{
             if (this.datas.statut !==2 || this.datas.length > 0){
-                this.datas.forEach(item => { item.medias.forEach(file => file.location = `${DOMAINBACK}/${file.location}`)});
+                this.datas.forEach(item => { item.medias.forEach(file => file.location = `${config.DOMAINBACK}/${file.location}`)});
                 return this.datas
             }else return []
         }
@@ -73,7 +71,7 @@ class ItemManager {
     }
     async saveAd(data){
         try{
-            const promise = await fetch(`${DOMAINBACK}/item`,{
+            const promise = await fetch(`${config.DOMAINBACK}/item`,{
                 method : 'POST',
                 body :  data
             })
@@ -90,7 +88,7 @@ class ItemManager {
     }
     async delete(id) {
         try{
-            const promise = await fetch(`${DOMAINBACK}/item/${id}`,{
+            const promise = await fetch(`${config.DOMAINBACK}/item/${id}`,{
                 method : 'DELETE',
             })
             if (!promise.ok){
