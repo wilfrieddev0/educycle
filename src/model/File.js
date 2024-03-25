@@ -1,6 +1,6 @@
-import ItemManager from "../model/Manager/ItemManager.js";
-import Controller from "./Controller.js";
-import User from '../model/Factory/User.js'
+import ItemManager from "./Manager/ItemManager.js";
+import Controller from "../controller/Controller.js";
+import User from './Factory/User.js'
 import { CustomRouter } from "../public/router.js";
 
 class File extends Controller{
