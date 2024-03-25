@@ -1,7 +1,7 @@
 import Signup from "/src/controller/Signup.js";
 import Main from "../controller/main.js";
 import Login from "../controller/Login.js";
-import File from "../controller/File.js";
+import File from "/src/controller/File.js";
 import User from "../model/Factory/User.js";
 import Notification from "../controller/Notification.js"
 import Account from "../controller/Account.js";
@@ -17,7 +17,7 @@ export class CustomRouter {
         CustomRouter.controller  =  null;
         // Définir les routes de l'application
         CustomRouter.AuthRequiredRoutes = {
-            "/file": "/src/template/file.html",
+            "/file": "/src/template/viewFile.html",
             "/notification": "/src/template/notification.html",
             "/don" : "/src/template/don.html",
         };
