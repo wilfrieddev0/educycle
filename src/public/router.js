@@ -31,7 +31,7 @@ export class CustomRouter {
             "/item" : "/src/template/item.html",
             "/favoris": "/src/template/favoris.html",
             "/account" : "/src/template/account.html", 
-            "/file": "/src/template/file.html",
+            "/file": "/src/template/viewFile.html",
             "/notification": "/src/template/notification.html",
             "/don" : "/src/template/don.html",
             "404": "/src/template/error.html"
