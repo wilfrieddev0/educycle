@@ -10,7 +10,7 @@ import Don from "../controller/Don.js";
 import Item from "../controller/Item.js";
 import { DOMAINFRONT } from "./ressource/secret.js";
 
-// On définit la fonction de routage et on crée l'unique instance de l'utilisateur
+// On définit la fonction de routage et on crée l'unique instance de l'utilisateur...
 export class CustomRouter {
     constructor(){
         CustomRouter.user =  User.getUniqueInstance();
