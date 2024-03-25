@@ -2,7 +2,7 @@ import ItemManager from "../model/Manager/ItemManager.js";
 import Controller from "./Controller.js";
 import User from "../model/Factory/User.js";
 import { CustomRouter } from "../public/router.js";
-import { DOMAINFRONT,APITOKEN,EMAILTEST } from "../public/ressource/secret.js";
+import { config } from "../../config.js";
 class Item extends Controller{
     constructor(){
         super()
@@ -57,11 +57,11 @@ class Item extends Controller{
         const StringEmail = await fetch('src/template/Component/emailDemand.html').then( resp => resp.text()).catch( e => console.log(e))
         const parser= new DOMParser()
         const DOMEmail =  parser.parseFromString(StringEmail,'text/html')
-        DOMEmail.querySelector('a#go').href = `${DOMAINFRONT}/login`
+        DOMEmail.querySelector('a#go').href = `${config.DOMAINFRONT}/login`
         // EmailJS
         var templateParams = {
             to_email : this.user.datas().email,
-            link :  `${DOMAINFRONT}/login`
+            link :  `${config.DOMAINFRONT}/login`
           };
           emailjs.send('service_v4093qe', 'template_01kdgjc', templateParams)
                  .then(

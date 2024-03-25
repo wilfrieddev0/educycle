@@ -1,4 +1,5 @@
-import { DOMAINBACK } from "../../public/ressource/secret.js";
+import { config } from "../../../config.js";
+const DOMAINBACK  = config.DOMAINBACK;
 class ItemManager {
     constructor(){
         this.AllDatas =  []
@@ -8,6 +9,7 @@ class ItemManager {
     // Cette methode recupère toutes les annonces de la base de données
      async fetch (ressource, method, param="", body=null){
         try{
+            debugger
             const promise = method ==='GET' ? await fetch(`${DOMAINBACK}/${ressource}/${param}`) : await fetch(`${DOMAINBACK}/${ressource}/${param }`,{
                 method : `${method}`,
                 body :  body

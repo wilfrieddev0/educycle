@@ -2,7 +2,8 @@ import User from "../model/Factory/User.js";
 import ItemManager from "../model/Manager/ItemManager.js";
 import Controller from "./Controller.js";
 import {CustomRouter} from "../public/router.js"
-import {APITOKEN,DOMAINBACK,DOMAINFRONT,EMAILTEST } from "../public/ressource/secret.js";
+import { config } from "../../config.js";
+
 class Account extends Controller{
     // La page acceuuil a deux entrée un en pour l-utilisateur et l'autre pour les autres
     constructor(){
@@ -199,7 +200,7 @@ class Account extends Controller{
             const form =  document.querySelector('form[name="authorize"]')
             const formData = new FormData(form)
             let result = ""
-            if ((this.imgProlile.src ===`${DOMAINFRONT}/src/public/ressource/image/defaultProfile.jpeg`) || !this.userData.medias ){
+            if ((this.imgProlile.src ===`${config.DOMAINFRONT}/src/public/ressource/image/defaultProfile.jpeg`) || !this.userData.medias ){
                 formData.append('idUser', this.userData.id)
                 formData.append('name','profile')
                 result = await this.uniqueInstance.uploadProfile(formData)
@@ -252,12 +253,12 @@ class Account extends Controller{
             const StringEmail = await fetch('src/template/Component/email.html').then( resp => resp.text()).catch( e => console.log(e))
             const parser= new DOMParser()
             const DOMEmail =  parser.parseFromString(StringEmail,'text/html')
-            DOMEmail.querySelector('a#verify').href = `${DOMAINBACK}/accountVerification/${this.userData.id}`
+            DOMEmail.querySelector('a#verify').href = `${config.DOMAINBACK}/accountVerification/${this.userData.id}`
             // EmailJS...
             var templateParams = {
                 name: this.userData.firstName,
                 to_email : this.userData.email,
-                link :  `${DOMAINBACK}/accountVerification/${this.userData.id}`
+                link :  `${config.DOMAINBACK}/accountVerification/${this.userData.id}`
               };
               emailjs.send('service_v4093qe', 'template_obp98c8', templateParams)
                      .then(

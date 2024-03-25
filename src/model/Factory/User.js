@@ -1,4 +1,5 @@
-import { DOMAINBACK } from "../../public/ressource/secret.js";
+import { config } from "../../../config.js";
+const DOMAINBACK  = config.DOMAINBACK;
 class User {
   // On implemente le singleton pattern
   constructor() {

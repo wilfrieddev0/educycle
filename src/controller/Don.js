@@ -2,8 +2,7 @@ import Controller from "./Controller.js";
 import ItemManager from "../model/Manager/ItemManager.js";
 import User from "../model/Factory/User.js";
 import { CustomRouter } from "../public/router.js";
-import { LATITTUDE, LONGITUDE, RAYON } from "../public/ressource/secret.js";
-
+import { config } from "../../../config.js";
 export class Don extends Controller {
     constructor() {
         super();
@@ -76,13 +75,13 @@ export class Don extends Controller {
     }
     initMap(){
         // On defini l'aire de prediction à Nice
-        const center = { lat: LATITTUDE, lng: LONGITUDE };
+        const center = { lat: config.LATITTUDE, lng: config.LATITTUDE };
         // Create a bounding box with sides ~30km away from the center point
         const defaultBounds = {
-        north: center.lat + RAYON,
-        south: center.lat - RAYON,
-        east: center.lng + RAYON,
-        west: center.lng - RAYON,
+        north: center.lat + config.LATITTUDE,
+        south: center.lat - config.LATITTUDE,
+        east: center.lng + config.LATITTUDE,
+        west: center.lng - config.LATITTUDE,
         };
         const options = {
           componentRestrictions: { country: "fr" },

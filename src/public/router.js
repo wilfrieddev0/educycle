@@ -1,3 +1,5 @@
+
+
 import Signup from "/src/controller/Signup.js";
 import Main from "../controller/main.js";
 import Login from "../controller/Login.js";
@@ -8,9 +10,9 @@ import Account from "../controller/Account.js";
 import Favoris from "../controller/Favoris.js";
 import Don from "../controller/Don.js";
 import Item from "../controller/Item.js";
-import { DOMAINFRONT } from "./ressource/secret.js";
-
+import { config } from "../../config.js";
 // On définit la fonction de routage et on crée l'unique instance de l'utilisateur...
+const DOMAINFRONT = config.DOMAINFRONT;
 export class CustomRouter {
     constructor(){
         CustomRouter.user =  User.getUniqueInstance();

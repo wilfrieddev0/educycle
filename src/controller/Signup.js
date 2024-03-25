@@ -1,7 +1,7 @@
 import User from "../model/Factory/User.js";
 import Controller from "./Controller.js";
 import { CustomRouter } from "../public/router.js";
-import { LATITTUDE, LONGITUDE, RAYON } from "../public/ressource/secret.js";
+import { config } from "../../config.js";
 
 class Signup extends Controller{
     constructor(){
@@ -29,13 +29,13 @@ class Signup extends Controller{
     //substitut du callback de Place api de Google pour l'autoCompletion des addresses
     initMap(){
         // On defini l'aire de prediction à Nice
-        const center = { lat: LATITTUDE, lng: LONGITUDE };
+        const center = { lat: config.LATITTUDE, lng: config.LONGITUDE };
         // Create a bounding box with sides ~30km away from the center point
         const defaultBounds = {
-        north: center.lat + RAYON,
-        south: center.lat - RAYON,
-        east: center.lng + RAYON,
-        west: center.lng - RAYON,
+        north: center.lat + config.RAYON,
+        south: center.lat - config.RAYON,
+        east: center.lng + config.RAYON,
+        west: center.lng - config.RAYON,
         };
         const options = {
           componentRestrictions: { country: "fr" },
