@@ -3,7 +3,7 @@
 import Signup from "/src/controller/Signup.js";
 import Main from "../controller/main.js";
 import Login from "../controller/Login.js";
-// import File from "/src/controller/File.js";
+import File from "/src/controller/File.js";
 import User from "../model/Factory/User.js";
 import Notification from "../controller/Notification.js"
 import Account from "../controller/Account.js";
