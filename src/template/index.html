@@ -1,0 +1,56 @@
+<section class="m-2 relative flex flex-col space-y-2">
+    <!-- Breve presentation de l'application -->
+    <div class="shadow-md rounded-md p-2  size-full border">
+        <h2 class="text-center font-bold">Bienvenue sur le site étudiant de la révolution solidaire</h2>
+    </div>
+    <div class ="basis-3/4 shadow-md rounded-md p-6 border text-justify font-semibold">
+        <p>EduCycle est une application web qui permet de donner et de recevoir des fournitures scolaires entre étudiants. Que vous ayez besoin de cahiers, de stylos, de livres ou de matériel informatique, vous pouvez trouver ce qu'il vous faut sur EduCycle. Vous pouvez aussi faire un geste solidaire en offrant les fournitures dont vous n'avez plus l'usage à d'autres étudiants qui en ont besoin. EduCycle est une plateforme simple, rapide et sécurisée qui vous met en relation avec les membres de votre communauté éducative. Rejoignez EduCycle et participez à une économie circulaire et responsable !</p>
+    </div>
+    <!-- La gride contenant les repetitions -->
+    <div class="shadow-md rounded-md  border p-2 flex flex-col items-start w-full">
+        <div class="w-full flex flex-row justify-between items-center ">
+            <div class="flex flex-row space-x-2 ">
+                <i class="fa-solid fa-arrow-down-wide-short"></i>       
+                <p>Tous les fitres</p>
+           </div>
+            <button id="deleteFilters" class="rounded-md p-2 border hover:bg-slate-100">Suppprimer les filtres</button>
+        </div>
+        <div id="filter"  class="size-full overflow-visible flex flex-row justify-between  items-center pt-1">
+            <div class="flex flex-row md:flex-row space-x-2">
+                <label for="Serie">Serie</label>
+                <select title="Serie" name="serie">
+                    <option value=""></option>
+                    <option value="Scientifique">Scientifique</option>
+                    <option value="Litteraire">Litteraire</option>
+                    <option value="Artistique">Artistique</option>
+                    <option value="Electronique">Electronique</option>
+                </select>
+            </div class="flex flex-row space-x-2">
+            <div class="flex flex-row space-x-2">
+                <label for="worth">Valeur</label>
+                <select title="value" name="worth">
+                    <option value=""></option>
+                    <option value="10">Moins de 10€</option>
+                    <option value="40">Moins de 40€</option>
+                    <option value="70">Moins de 70€</option>
+                </select>
+            </div class="flex flex-row space-x-2">
+            <div class="flex flex-row space-x-2">
+                <label for="sort">Rangement</label>
+                <select title="value" name="sort">
+                    <option value=""></option>
+                    <option value="De A à Z">De A à Z</option>
+                    <option value="De Z à A">De Z à A</option>
+                    <option value="Croissant">Croissant</option>
+                    <option value="Deccroissant">Deccroissant</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- La liste -->
+    <ul id="listItems" role="list"  class="overflow-y-scroll px-4 shadow flex flex-col space-y-1 min-h-screen">
+    </ul>
+    <a href="/don" onclick="route()"  class="fixed flex justify-center items-center size-20 rounded-full bg-sky-500 bottom-3 sm:left-[80%] md:left-[76%] transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110" >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+</section>

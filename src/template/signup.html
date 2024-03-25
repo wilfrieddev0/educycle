@@ -1,0 +1,64 @@
+<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
+    <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1 id="title" class="text-xl font-bold leading-tight tracking-tight  md:text-2xl ">
+                Sign up in to your account
+            </h1>
+            <form class="space-y-4 md:space-y-6" id="SignupForm" >
+                <div class="flex justify-center">
+                    <p id="erreur" class="text-center text-red-500"></p>
+                </div>
+                <div>
+                    <label for="firstName" class="block mb-2 text-sm font-medium" >FirstName</label>
+                    <input type="text" name="firstName"  maxlength="30" id="firstName" autocomplete="username"  class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="" required>
+                </div>
+                <div>
+                    <label for="lastName" class="block mb-2 text-sm font-medium" >Lastname</label>
+                    <input type="text" name="lastName" maxlength="30" id="lastName" autocomplete="username"  class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium" >Your email</label>
+                    <input type="email" name="email"  maxlength="50" id="email" autocomplete="username"  class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="name@company.com" required>
+                </div>
+                <div>
+                    <label for="phone" class="block mb-2 text-sm font-medium" >Phone</label>
+                    <input type="number" name="phone" max="999999999" id="phone" autocomplete=""  class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="" required>
+                </div>
+                <div class="">
+                    <label for="residence" class="block mb-2 text-sm font-medium" >Votre residence <br>Pour l'instant la recherche se limite aux residences situées à 30km max de Nice</label>
+                    <label for="residence" class="rounded-md border h-10 flex flex-row items-center space-x-1">
+                    <i class="fa-solid fa-street-view px-1"></i>
+                    <input type="text" class="size-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1" id="residence" title="residence" name="residence" />
+                </label>
+                </div>
+                <div>
+                    <label for="birthday" class="block mb-2 text-sm font-medium" >Birthday</label>
+                    <input type="date" name="birthday" id="birthday" autocomplete=""  class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="" required      >
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium">Password</label>
+                    <input type="password" name="password" maxlength="10" id="password" autocomplete="current-password" placeholder="••••••••" class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" required>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium">Confirm  your password</label>
+                    <input type="password" id="verified" maxlength="10" autocomplete="current-password" placeholder="••••••••" class="rounded-full size-full placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" onchange="" required>
+                </div>
+                <div id="signup" class="space-y-2">   
+                    <div class="rounded-md p-1 flex flex-col justify-start border">
+                        <div class="flex space-x-3 items-center">
+                            <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required>
+                            <label for="terms" class="text-gray-500 dark:text-gray-300">Accept Terms</label>  
+                        </div>
+                    </div>
+                    <button type="submit" id="submit" onclick="route()"  class="w-full hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center border"  >Sign in</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Don’t have an account yet? <a href="/login" onclick="route()" class="font-medium text-primary-600 hover:underline dark:text-primary-500">login</a>
+                    </p>
+                </div>
+                <div id="update" class="hidden">
+                    <button type="submit" id="update" class="w-full hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center border"  >Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

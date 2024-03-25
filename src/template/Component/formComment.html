@@ -1,0 +1,23 @@
+<div class="fixed w-3/5 p-3 flex rounded-md shadow-md bg-white border flex-col  h-fit z-50" >
+    <h1 class="font-semibold border-b-2 text-center" >Commentaire de fin de transaction</h1>
+    <form class="formComment">
+        <div class="py-1 flex flex-col w-full">
+            <label for="note">Sur une echelle 1 à 5, combien donnes-tu au produit recuperé?</label>
+            <input type="number" name="note" hidden>
+            <div id="stars" class=" w-full flex justify-center py-2 space-x-1 bg-white">
+                <i class="star size-10 fa-solid fa-star" ></i>
+                <i class="star size-10 fa-solid fa-star" ></i>
+                <i class="star size-10 fa-solid fa-star" ></i>
+                <i class="star size-10 fa-solid fa-star" ></i>
+                <i class="star size-10 fa-solid fa-star" ></i>
+            </div>
+        </div>
+        <p class="my-1">Laisses un message de remerciement à ton bienfaiteur ça fait toujours plaisir!Tu gères✨😉</p>            
+        <label for="message">Ecris ton message</label>
+        <textarea class="rounded-md size-full hover:bg-slate-100 bg-gray-50 " name="message" id="message" cols="30" rows="10" required="required"></textarea>
+        <div class=" w-full flex justify-end space-x-2">
+            <button class="rounded-md left-auto p-3 hover:bg-red-600 bg-gray-50" type="submit" id="cancel">Annuler</button>
+            <button class="rounded-md left-auto p-3 hover:bg-green-600 bg-gray-50" type="submit" id="submit">Termnier</button>
+        </div>
+    </form>
+</div>  

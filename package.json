@@ -1,0 +1,33 @@
+{
+  "name": "educycle",
+  "version": "1.0.0",
+  "description": "Frontend...",
+  "main": "router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "landry kankeu",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "engines": {
+    "node": "21.x"
+  },
+  "dependencies": {
+    "@googleapis/docs": "^3.0.0",
+    "cool-ascii-faces": "^1.3.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "googleapis": "^133.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KFLandry/eduCycle.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KFLandry/eduCycle/issues"
+  },
+  "homepage": "https://github.com/KFLandry/eduCycle#readme"
+}

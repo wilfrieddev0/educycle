@@ -1,0 +1,36 @@
+<section class="p-2 size-full h-screen flex flex-col space-y-2  ">
+    <div class="shadow-md rounded-md  w-full text-center font-semibold p-2 border"> Vous êtes dans votre file </div>
+    <div class="relative overflow-y-scroll rounded-md w-full flex flex-col space-y-1 border h-full">
+        <ul id="file" role="list" class="py-1 space-y-1">
+             <li  class="p-2 group/item shadow-md rounded-md hover:bg-slate-100 flex flex-row justify-between space-x-5">
+                <img class="rounded-md object-cover h-28 w-32" src="src/public/ressource/image/1086048702.avif" alt="item image">
+                <div class="font-semibold flex-1 "> 
+                    <div class="flex flex-row items-center justify-between">
+                        <a href="/item" onclick="route()">...</a>
+                        <div class="flex flex-row items-center space-x-2">
+                            <p id="labelStatut"></p>
+                            <i id="statut" class="rounded-full fa-regular fa-circle bg-yellow-300"></i>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p class="text-green-600"></p>
+                    <p><a class="text-blue-400" href="\account" onclick="route()">... </a></p>
+                    <div class="flex items-center space-x-1 hover:bg-gray-50">
+                        <div  class=""></div>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                </div>
+                <div class="p-2 group/edit flex flex-col justify-between invisible hover:bg-transparent group-hover/item:visible" >
+                    <i class="cursor-pointer rounded-md p-2  hover:bg-green-600 fa-solid fa-check-double"></i>
+                    <i class="cursor-pointer rounded-md p-2  hover:bg-yellow-600 fa-solid fa-xmark"></i>
+                    <i class="cursor-pointer rounded-md p-2   hover:bg-red-600 fa-regular fa-trash-can"></i>
+                </div>
+            </li>
+        </ul>
+        <div class="size-full comment flex-none justify-center items-center hidden"></div>
+        <!-- Le cards line de file-->
+    </div>
+    <div class="w-full shadow-md rounded-md flex-1 p-2 flex justify-center space-x-5 border ">
+        <button class="clear rounded-md  bg-red-500 p-2">Vider la file</button>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<li class="group/item p-2 rounded-md shadow-md hover:bg-slate-100 flex flex-row items-center space-x-4">
+    <img class="h-32 w-32 rounded-full object-cover"  id="senderProfile" src="src/public/ressource/image/pexels-rodolfo-clix-1615776.jpg" alt="" />
+    <div class="h-30  border rounded-md flex-1 flex flex-row">
+        <div class="p-2 flex-1 flex flex-col">
+            <div class="flex justify-between ">
+                <a class="text-center font-semibold"  href="/account" id="senderName">Henry MohrGan</a>
+                <p id="publishedDate" class="italic">il y'a 2 jours</p>
+            </div>
+            <p class="size-full text-justify" id="message">
+                Bonjour <a class="font-semibold">AAron</a>,<br>Je suis intéréssé(e) par ton annonce.Est-ce que c'est possible que je recupére ta/ton <a id="itemName"  class="font-semibold">DeathNnote</a> 😊 à l'accueil de ta residence le <span id="date" class="font-semibold"> 2 Septembre prochain.</span><br>Je remercie par avance de ta generosité!✨😉
+            </p>
+            <p>Annonce de  :  <a id="itemName"></a></p>
+        </div>
+        <!-- Les boutons rendu visible au survol -->
+        <div class="p-2 group/edit flex flex-col justify-between invisible hover:bg-transparent group-hover/item:visible" >
+            <button title="accept" id="accept" class="rounded-md p-2  hover:bg-green-600"><i class=" fa-solid fa-check-double"></i></button>
+            <button title="deny" id="deny" class="rounded-md p-2  hover:bg-yellow-600"><i class="fa-solid fa-xmark"></i></button>
+            <button title="delete" id="delete" class="rounded-md p-2   hover:bg-red-600 "><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+  </li>

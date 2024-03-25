@@ -1,0 +1,87 @@
+<section class="p-2 size-full flex flex-col space-y-2  ">
+    <h1 id="title" class=" shadow-md rounded-md p-2 border text-center font-semibold">Je remplie les informations de mon don</h1>
+    <p id="info" class="italic"></p>
+    <div class="w-full h-fit border">
+        <form class="shadow-md rounded-md p-3 h-fit" method="POST" enctype="multipart/form-data" id="formAds">
+            <div class="flex flex-col justify-start">
+                <!--  -->
+                <div class="flex flex-col w-full ">
+                    <label for="name">Nom de la fourniture à donner</label>
+                    <input class="rounded-md border w-full" type="text" name="name" id="name" required>
+                </div> 
+                <!--  -->
+                <div class="flex flex-col">
+                    <label for="series">Selctionner la ou les serie(s) concernées par la fourniture</label>
+                    <div class="rounded-md border p-2 flex flex-col justify-between">
+                        <div class=""><input title="serie" type="checkbox" name="series" value="Science"> Science <br></div>
+                        <div class=""><input title="serie" type="checkbox" name="series" value="Litterature"> Litterature <br></div>
+                        <div class=""><input title="serie" type="checkbox" name="series" value="Arts Plastique"> Arts Plastique <br></div>
+                        <div class=""><input title="serie" type="checkbox" name="series" value="Informatique"> Informatique <br></div>
+                        <div class=""><input title="serie" type="checkbox" name="series" value="Commnunication"> Commnunication <br></div>
+                        <div class=""><input title="serie" type="checkbox" name="series" value="Management"> Management <br></div>
+                    </div>
+                </div>
+                <!--  -->
+                <!-- Address Via l'api de Google --> 
+                <label for="residence">Entrer le nom de votre residence où l'article sera disponible <br><p class="italic">Si C'est votre residence actuelle, renseignez quand même le champ.Selectionner bien bien votre residence dans les prédictions proposées</p></label>
+                <label for="residence" class="rounded-md border h-10 flex flex-row items-center space-x-1">
+                    <i class="fa-solid fa-street-view px-2"></i>
+                    <input type="text" class="size-full" id="residence" title="residence" name="residence" requi    red/>
+                </label>
+                <!--  -->
+                <div class="flex flex-col py-2 my-1">
+                    <label for="worth">Valeur estimée de la fourniture</label>
+                    <input class="rounded-md border" type="number" name="worth" id="worth" required>
+                </div>
+                <!--  -->
+                <div class="rounded-md border p-2 flex justify-between">
+                    <label for="state">Sur une echelle de 1 à 3 Dans quelle etat est votre bien</label>
+                    <select name="state" id="" title="state" required>
+                        <option value="En parfait état">3 -> En parfait état</option>
+                        <option value="Bon état">2 -> Bon état</option>
+                        <option value="Endommangé mais fonctionnelle">1 -> Endommangé mais fonctionnelle</option>
+                        <option value="N'est plus utilisable">0 -> N'est plus utilisable</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <label for="description">Description detaillée de la fourniture</label>
+                    <textarea class="rounded-md border" name="description" id="description" cols="30" rows="10" required></textarea>
+                </div>
+                <p>Quand le deposeras-tu à l'acceuil de ta residence</p>
+                <div class="rounded-md border p-2 flex flex-row justify-between">
+                    <label for="available">Date</label>
+                    <input id="available" type="date" name="available" required />
+                    <label for="period"></label>
+                    <select name="period" title="period" required>
+                        <option value="Matin">Matin</option>
+                        <option value="Soir">Soir</option>
+                    </select>
+                </div>
+                <div id="formFile" class="rounded-md py-1 flex flex-col">
+                    <label for="photos" class="rounded-md p-2 w-full flex flex-row justify-center items-center space-x-2 bg-green-600">
+                        <i class="fa-solid fa-upload"></i>
+                        <p>Selectionner les photos</p>
+                        <input type="file" name="photos" id="photos" accept="image/*" hidden multiple required/>
+                    </label>
+                    <div class="rounded-md border h-52 p-2">
+                        <ul id="listPhotos" role="list"  class="size-full overflow-x-auto flex space-x-2">
+                        </ul>
+                        <!--  -->
+                    </div>
+                </div>  
+                <div id="insert"  class="rounded mt-1 p-4 flex flex-row justify-end items-end border">
+                    <button type="submit" name="submit"  class="rounded p-2 flex flex-row space-x-2 border bg-sky-500 bottom-3 sm:left-[80%] md:left-[76%] transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110" >
+                        <p>Publier mon annonce</p>  
+                        <div id="icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    </button>
+                </div>
+                <div id="update" class="hidden rounded mt-1 p-4 flex-row justify-end items-end border">
+                    <button type="submit" name="update"  class="rounded p-2 flex flex-row space-x-2 border bg-sky-500 bottom-3 sm:left-[80%] md:left-[76%] transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110" >
+                        <p>Enrigeritrer les mises jours</p>  
+                        <i  class="fa-solid fa-hand-holding-dollar"></i>
+                    </button>
+                </div>
+        </form>              
+    </div>    
+    </div>
+</section>

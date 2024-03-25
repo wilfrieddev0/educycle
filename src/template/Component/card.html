@@ -1,0 +1,68 @@
+<li id="item"  class="p-2 group/item rounded-md h-fit border hover:bg-slate-100 flex flex-row justify-between space-x-16">
+    <img id="itemPhoto"  class="rounded-md object-cover h-28 w-32" src="src/public/ressource/image/1086048702.avif" alt="itemsds">
+    <div class="font-semibold flex-1 "> 
+        <div class="flex flex-row items-center justify-between">
+            <a id="itemName" href="/item" onclick="route()">Ti 83 Premium</a>
+            <div class="flex flex-row items-center space-x-2" title="statut">
+                <p id="statut">En attente de validation</p>
+                <i id="statut" class="rounded-full fa-regular fa-circle bg-yellow-300"></i>
+            </div>
+        </div>
+        <p>Valeur estimer à <span id="itemWorth">40</span>€</p>
+        <p id="itemState" class="text-green-600">Fonctionne encore</p>
+        <p>Publié le <span id="itemPublisherDate"></span> 2 Septembre 2023 par <a class="text-blue-400"  id="account" href="\account" onclick="route()"> Pierre </a></p>
+        <div class="flex justify-between items-center space-x-1 hover:bg-gray-50">
+            <div class="flex flex-row items-center space-x-1">
+                <a id="itemLocation"  class="">Residence Jean medecin</a>
+            <i class="fa-solid fa-location-dot"></i>
+            </div>
+        <!--   Les commentaires-->
+            <div id="comment" class="hidden">    
+                <button name="toggle" class="text-blue-400 cursor-pointer">Voir le commentaire</button>
+                <div name="comment" class="border p-3 rounded-md shadow-md">
+                    <a href="" id="HunterName">Pierre l'avoct</a> le <span id="dateReceipt">23-11-2024 à 18:45:12</span>
+                    <div id="stars" class="w-full flex py-2 space-x-1 bg-white">
+                        <i class="star fa-solid fa-star" ></i>
+                        <i class="star fa-solid fa-star" ></i>
+                        <i class="star fa-solid fa-star" ></i>
+                        <i class="star fa-solid fa-star" ></i>
+                        <i class="star fa-solid fa-star" ></i>
+                    </div>
+                    <p id="message" >Franchement tu es un bon👌Ton truc c'est une dinguerie!🤯</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- les controls  -->
+    <div id="main" class="hidden p-2 group/edit flex-col justify-between invisible hover:bg-transparent group-hover/item:visible">
+        <button title="Ajouter au favoris" id="favor_main" class="rounded-md hover:bg-yellow-400">
+            <i  class="fa-regular fa-star p-2"></i>
+        </button>
+    </div>
+    <div class="hidden p-2 group/edit flex-col justify-between invisible hover:bg-transparent group-hover/item:visible" id="favoris">
+        <a title="recupérer la fourniture" id="recover">
+            <i class="cursor-pointer rounded-md p-2  hover:bg-slate-400 fa-solid fa-right-to-bracket"></i>
+        </a>
+        <button id="delete_favor" title="delete">
+            <i class="cursor-pointer rounded-md p-2  hover:bg-red-600 fa-regular fa-trash-can"></i>
+        </button>
+    </div>
+    <div name="authorize" class="hidden p-2 group/edit flex-col justify-between invisible hover:bg-transparent group-hover/item:visible" >
+        <button id="edit" title="Editer l'annonce">
+            <i  class="rounded-md p-2  hover:shadow-md  fa-regular fa-pen-to-square"></i>
+        </button>
+        <button title="delete" id="delete">
+            <i class="rounded-md p-2   hover:bg-red-600 fa-regular fa-trash-can"></i>
+        </button>
+    </div>
+    <div name="unauthorize" class="hidden p-2 group/edit flex-col justify-between invisible hover:bg-transparent group-hover/item:visible" >
+        <button title="Ajouter au favoris" id="favor" class="rounded-md  hover:bg-yellow-400">
+            <i  class="fa-regular fa-star p-2"></i>
+        </button>
+    </div>
+     <div class="hidden p-2 group/edit flex-col justify-between invisible hover:bg-transparent group-hover/item:visible" id='file' >
+        <button title="Valider la récupération" id="accept" class="rounded-md p-2  hover:bg-green-600"><i class=" fa-solid fa-check-double"></i></button>
+        <button title="Annuler mais enregistrer dans mes favoris" id="deny" class="rounded-md p-2  hover:bg-yellow-600"><i class="fa-solid fa-xmark"></i></button>
+        <button title="Annuler totalement la récupération" id="delete_file" class="rounded-md p-2   hover:bg-red-600 "><i class="fa-regular fa-trash-can"></i></button>
+     </div>
+  </li>

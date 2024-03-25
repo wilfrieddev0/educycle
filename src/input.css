@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+svg{
+    height:40px
+}
+.star{
+    color: #E6E9EF;
+}

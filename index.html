@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>EduCycle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/output.css" />
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="icon" href="favicon/favicon.ico">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="src/input.css">
+        <link href="src\output.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="main-nav" class="fixed w-full z-40 bg-sky-500">
+            <div class="flex items-center shadow">
+                <!-- Le logo -->
+                <div class="basis-1/4 flex justify-center" >
+                    <a href="/" onclick="route()" class="size-full font-extrabold text-center">EduCycle </a>
+                </div>
+                <!-- La barre de recherche -->
+                <div class="md:basis-3/6 sm:flex-1">
+                    <input name="search" type="text" class="rounded-full size-full placeholder:italic placeholder:text-slate-400 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Rechercher sur EduCyle ">
+                </div>
+                <!-- les icons de navigations -->
+                <ul class="pl-2 sm:hidden md:flex-1 md:flex justify-between items-center cursor-pointer">
+                    <li class="rounded h-full px-1 flex flex-col justify-between align-middle items-center cursor-pointer hover:bg-sky-400">
+                        <i class="fa-solid fa-hands-holding-circle p-3"></i>
+                        <a href="/file" class="static" onclick="route()">File</a>
+                    </li>
+                    <li  class="rounded h-full px-4 flex flex-col justify-between align-middle items-center cursor-pointer hover:bg-sky-400">
+                        <i class="fa-regular fa-star p-3"></i>
+                            <a href="/favoris" onclick="route()">Favoris</a>
+                    </li>
+                    <li class="rounded h-full px-4 flex flex-col justify-between align-middle items-center cursor-pointer hover:bg-sky-400">
+                        <i class="fa-regular fa-bell p-3"></i>
+                        <a href="/notification" onclick="route()">Notifications</a>
+                    </li>
+                    <li id="btnMenu" class="rounded h-full px-4 flex flex-col justify-between align-middle items-center cursor-pointer hover:bg-sky-400">
+                        <button name="menu">
+                            <div id="profile" class="rounded-full h-5 w-5 p-5 flex justify-center items-center">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <p id="labelName">Account</p>
+                        </button>
+                    </li>
+                </ul>
+                <!-- Le humburger -->
+
+                <button title="menu" type="button" id="sMenu" class="md:hidden size-fit focus:outline-none flex flex-col items-center cursor-pointer">
+                    <i class="mx-2 size-10 fa-solid fa-burger"></i>
+                </button>
+                <div id="menu" class="fixed left-auto w-3/4 h-screen  bg-white border">
+                    <ul id="listeMenu"  class="pl-2 flex flex-col items-center justify-around space-y-4">
+                        <li class="p-3 rounded-md flex flex-row justify-center items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+                            <i class="fa-solid fa-plus"></i>
+                            <a href="/don" onclick="route()">Je dépose une annonce</a>
+                        </li>
+                        <li class="w-full flex flex-row justify-between items-center hover:bg-gray-50 cursor-pointer">
+                            <i class="fa-solid fa-hands-holding-circle"></i>
+                            <a href="/file" onclick="route()">File</a>
+                        </li>
+                        <li  class="w-full flex flex-row justify-between items-center hover:bg-gray-50 cursor-pointer" >
+                            <i class="fa-regular fa-star"></i>
+                            <a href="/favoris" onclick="route()">Favoris</a>
+                        </li>
+                        <li class="w-full flex flex-row justify-between  items-center hover:bg-gray-50 cursor-pointer">
+                            <i class="fa-regular fa-envelope"></i>
+                            <a href="/notification" onclick="route()">notifications</a>
+                        </li>
+                        <li name="unauthorize"  class="w-full flex flex-row justify-between items-center hover:bg-gray-50 cursor-pointer">
+                            <i class="fa-regular fa-user"></i>                                
+                            <a id="userName"href="/login" onclick="route()">Login</a>
+                        </li>
+                        <li name="unauthorize" class="w-full flex flex-row justify-between items-center hover:bg-gray-50 cursor-pointer">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <a id="signup" href="/signup" onclick="route()">S'inscrire</a>      
+                        </li>
+                        <li name="authorize" class="hidden w-full flex-row justify-between items-center hover:bg-gray-50 cursor-pointer" >
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <a href="/account"  onclick="route()">Account</a>
+                        </li>
+                        <li name="authorize" class="hidden w-full flex-row justify-between items-center hover:bg-gray-50 cursor-pointer" >
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <button class="logout">Deconnexion</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section id="main" class="md:pt-16 sm:pt-10 flex flex-col items-center bg-white">
+            <!-- Loading area -->
+            <div id="loading" class="hidden fixed inset-y-1/2 inset-x-1/2 flex-col border" hidden>
+                <svg class="animate-spin h-20 w-5 mr-20" viewBox="0 0 24 24">
+                    <!-- ... -->
+                  </svg>
+                  Processing...
+            </div>
+            <div class="relative size-full xl:size-4/6 flex-col items-center min-h-svh"> 
+                <div id="sMenu" class="absolute rounded-md right-0 w-fit border bg-white z-50 " style="display: none;">
+                    <div class="p-2 flex flex-col size-fit">
+                        <a href="/don" onclick="route()" class="w-full p-1 flex flex-row items-center justify-between hover:bg-gray-50">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <p class="pl-2"> Faire un don </p>
+                        </a>
+                        <a name="unauthorize" href="/login" onclick="route()" class="w-full p-1 flex flex-row items-center justify-between hover:bg-gray-50" >
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <p> Login </p>
+                        </a>
+                        <a name="unauthorize"href="/signup" onclick="route()" class="w-full  p-1 flex flex-row items-center justify-between hover:bg-gray-50">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <p>S'inscrire</p>
+                        </a>
+                        <a name="authorize" href="/account" onclick="route()" class="hidden w-full flex-row p-1 items-center justify-between hover:bg-gray-50" >
+                            <div id="profile"><i class="fa-solid fa-user-plus"></i></div>
+                            <p>Account</p>
+                        </a>
+                        <button name="authorize" onclick="route()" class="logout hidden w-full p-1 flex-row items-center justify-between hover:bg-gray-50">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <p>Me déconnecter</p>
+                        </button>
+                    </div>
+                </div>
+                <div id="main-page" class="border"></div>
+                <div id="main-footer" class="size-full p-3 border bottom-auto italic text-end" >By landry <a href="https://www.linkedin.com/in/landry-kankeu-838530252"><i class="fa-brands fa-linkedin"></i></a></div>
+            </div>
+        </section>
+        <script type="module" src="/src/public/router.js" defer></script>
+        <script src="https://kit.fontawesome.com/b8937a4147.js" crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAr2TfqhPmoBefC23qY6OU1QUt00apCAGI&libraries=places&v=weekly" defer></script>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "RnGzTkmGvKZrV0-Zh",
+            });
+        })();
+        </script>
+    </body>
+</html>
